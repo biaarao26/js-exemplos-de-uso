@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador com Cores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+        .contador-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contador {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contador-container">
+        <p class="contador" id="contador">0</p>
+        <button onclick="incrementarContador()">Clique para aumentar</button>
+    </div>
+
+    <script>
+        // Inicializa o contador com valor 0
+        let contador = 0;
+
+        // Função que incrementa o contador e atualiza a exibição com cores
+        function incrementarContador() {
+            contador++;  // Incrementa o valor do contador
+
+            // Atualiza o número exibido na tela
+            let contadorElement = document.getElementById('contador');
+            contadorElement.textContent = contador;
+
+            // Verifica se o número é par ou ímpar e altera a cor
+            if (contador % 2 === 0) {
+                contadorElement.style.color = "blue";  // Número par
+            } else {
+                contadorElement.style.color = "red";   // Número ímpar
+            }
+        }
+    </script>
+
+</body>
+</html>
